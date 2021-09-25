@@ -16,6 +16,8 @@ namespace IntecapBooks.Controllers
 
         public IActionResult Index()
         {
+            string test = "Hola Git!";
+            string funcionalidad = "Ahora estoy autenticando...";
             var bookList = _bookService.GetBooks();
             return View(bookList);
         }

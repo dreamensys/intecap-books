@@ -396,3 +396,6 @@ C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks\bin\Debu
 C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks\obj\Debug\netcoreapp3.1\Razor\Views\Home\Details.cshtml.g.cs
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks\obj\Debug\netcoreapp3.1\Razor\Views\Admin\Books.cshtml.g.cs
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks\obj\Debug\netcoreapp3.1\Razor\Views\Admin\UpsertBook.cshtml.g.cs
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_EditAndBackToListButton.cshtml.g.cs

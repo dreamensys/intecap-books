@@ -1,17 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
+﻿
+using System.ComponentModel.DataAnnotations;
 
 namespace IntecapBooks.Models
 {
     public class BookModel
     {
+        [Key]
         public int Id { get; set; }
+
+        [Required(ErrorMessage ="Esta propiedad es requerida")]
+        [MaxLength(100)]
         public string Title { get; set; }
+
+        [Required]
         public string Description { get; set; }
+
+        [Required]
         public string ISBN { get; set; }
 
+        public string SiteUrl { get; set; }
         public string Author { get; set; }
 
+        [Required]
         public double Price { get; set; }
 
         public double Discount { get; set; }

@@ -1,4 +1,5 @@
-﻿using IntecapBooks.Models;
+﻿using IntecapBooks.Data;
+using IntecapBooks.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
@@ -11,6 +12,7 @@ namespace IntecapBooks.Controllers
     public class AdminController : Controller
     {
         private IBooksService _bookService;
+        ApplicationDbContext _context = new ApplicationDbContext();
 
         public AdminController(IBooksService service)
         {
@@ -20,11 +22,13 @@ namespace IntecapBooks.Controllers
         //Admin/Books
         public IActionResult Books()
         {
-            List<BookModel> bookList = _bookService.GetBooks();
+            var categories = _context.Categories; // = SELECT * FROM Categories;
+            var books = _context.Books; // SELECT * FROM Books;
+            List<BookModel> bookList = books.ToList();//_bookService.GetBooks();
             return View(bookList);
         }
 
-        //Admin/Upsert
+        //GET: Admin/Upsert
         public IActionResult UpsertBook(int? id)
         {
             NewBook newBookModel = new NewBook();
@@ -32,7 +36,7 @@ namespace IntecapBooks.Controllers
             newBookModel.CoverTypeList = GetCoverTypes();
 
             if (id != null) {
-                List<BookModel> bookList = _bookService.GetBooks();
+                List<BookModel> bookList = _context.Books.ToList();
                 BookModel book = bookList.Where(item => item.Id == id).FirstOrDefault();
                 newBookModel.Book = book;
                 return View(newBookModel);
@@ -44,6 +48,51 @@ namespace IntecapBooks.Controllers
             }
             
             return View(newBookModel);
+        }
+
+        // POST:/Admin/Upsert
+        [HttpPost]
+        public IActionResult UpsertBook(NewBook bookFormData)
+        {
+            if (ModelState.IsValid)
+            {
+                if (bookFormData.Book.Id != 0)
+                {
+                    BookModel existingBook = _context.Books.FirstOrDefault(f => f.Id == bookFormData.Book.Id);
+                    existingBook.Author = bookFormData.Book.Author;
+                    existingBook.CategoryId = bookFormData.Book.CategoryId;
+                    existingBook.CoverTypeId = bookFormData.Book.CoverTypeId;
+                    existingBook.Description = bookFormData.Book.Description;
+                    existingBook.Discount = bookFormData.Book.Discount;
+                    existingBook.Title = bookFormData.Book.Title;
+                    existingBook.ImageUrl = bookFormData.Book.ImageUrl;
+                    existingBook.ISBN = bookFormData.Book.ISBN;
+                    existingBook.Price = bookFormData.Book.Price;
+
+                    _context.Update(existingBook);
+                    _context.SaveChanges();
+                }
+                else
+                {
+                    BookModel newBook = new BookModel();
+                    newBook = bookFormData.Book;
+                    _context.Books.Add(newBook);
+                    _context.SaveChanges();
+                }
+                return RedirectToAction(nameof(Books));
+            }
+            else {
+                bookFormData.CategoryList = GetCategories();
+                bookFormData.CoverTypeList = GetCoverTypes();
+                
+                if (bookFormData.Book.Id != 0)
+                {
+                    bookFormData.Book = _context.Books.FirstOrDefault(f => f.Id == bookFormData.Book.Id);
+                }
+            }
+
+            return View(bookFormData);
+            
         }
 
         public IEnumerable<SelectListItem> GetCategories()

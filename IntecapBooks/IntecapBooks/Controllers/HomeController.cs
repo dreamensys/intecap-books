@@ -22,7 +22,6 @@ namespace IntecapBooks.Controllers
 
         public async Task<IActionResult> Index()
         {
-            var externalBooks = await _externalBookProvider.GetBooks();
             var bookList = _bookService.GetBooks();
             foreach (ExternalBook externalBook in externalBooks)
             {

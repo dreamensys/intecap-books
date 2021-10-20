@@ -1,0 +1,16 @@
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Infrastructure\bin\Debug\netcoreapp3.1\IntecapBooks.Infrastructure.deps.json
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Infrastructure\bin\Debug\netcoreapp3.1\IntecapBooks.Infrastructure.dll
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Infrastructure\bin\Debug\netcoreapp3.1\IntecapBooks.Infrastructure.pdb
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Infrastructure\obj\Debug\netcoreapp3.1\IntecapBooks.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Infrastructure\obj\Debug\netcoreapp3.1\IntecapBooks.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Infrastructure\obj\Debug\netcoreapp3.1\IntecapBooks.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Infrastructure\obj\Debug\netcoreapp3.1\IntecapBooks.Infrastructure.AssemblyInfo.cs
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Infrastructure\obj\Debug\netcoreapp3.1\IntecapBooks.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Infrastructure\obj\Debug\netcoreapp3.1\IntecapBooks.Infrastructure.dll
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Infrastructure\obj\Debug\netcoreapp3.1\IntecapBooks.Infrastructure.pdb
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Infrastructure\bin\Debug\netcoreapp3.1\IntecapBooks.Infrastructure.runtimeconfig.json
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Infrastructure\bin\Debug\netcoreapp3.1\IntecapBooks.Infrastructure.runtimeconfig.dev.json
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Infrastructure\bin\Debug\netcoreapp3.1\IntecapBooks.Business.dll
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Infrastructure\bin\Debug\netcoreapp3.1\IntecapBooks.Business.pdb
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Infrastructure\obj\Debug\netcoreapp3.1\IntecapBooks.Infrastructure.csproj.CopyComplete
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Infrastructure\obj\Debug\netcoreapp3.1\IntecapBooks.Infrastructure.genruntimeconfig.cache

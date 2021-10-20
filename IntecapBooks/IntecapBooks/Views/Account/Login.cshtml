@@ -1,0 +1,16 @@
+﻿@model LoginViewModel
+
+<div id="logreg-forms">
+
+    <form id="account" method="post">
+        <h1 class="h3 mb-3 font-weight-normal text-primary" style="text-align:center;">Sign In</h1>
+        <input asp-for="@Model.Email" placeholder="Email..." type="email" class="mb-1 form-control" />
+        <input asp-for="@Model.Password" placeholder="Password..." type="password" class="form-control" />
+        <button type="submit" class="btn btn-success btn-block"><i class="fas fa-sign-in-alt"></i> Sign in</button>
+
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <a href="/Account/Register"
+           class="btn btn-primary text-white"><i class="fas fa-user-plus"></i> Register as a new user</a>
+    </form>
+
+</div>

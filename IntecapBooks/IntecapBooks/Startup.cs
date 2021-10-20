@@ -1,12 +1,15 @@
+using IntecapBooks.Business.Entities;
+using IntecapBooks.Infrastructure.API;
+using IntecapBooks.Infrastructure.Data;
+using IntecapBooks.Infrastructure.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using IntecapBooks.Infrastructure.Extensions;
 
 namespace IntecapBooks
 {
@@ -24,6 +27,15 @@ namespace IntecapBooks
         {
             services.AddControllersWithViews();
             services.AddScoped<IBooksService, BooksService>();
+            services.AddScoped<IRepository<Book>, BooksRepository>();
+            services.AddHttpClient<IExternalBookProviderClient, ExternalBookProviderClient>();
+
+            services.AddIdentity<IdentityUser, IdentityRole>(options => {
+                options.Password.RequireDigit = true;
+            }).AddDefaultTokenProviders()
+                .AddEntityFrameworkStores<ApplicationDbContext>();
+
+            services.AddDatabaseProvider();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -41,6 +53,7 @@ namespace IntecapBooks
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

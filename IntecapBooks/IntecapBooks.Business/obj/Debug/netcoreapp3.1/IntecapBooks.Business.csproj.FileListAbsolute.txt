@@ -1,0 +1,9 @@
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Business\bin\Debug\netcoreapp3.1\IntecapBooks.Business.deps.json
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Business\bin\Debug\netcoreapp3.1\IntecapBooks.Business.dll
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Business\bin\Debug\netcoreapp3.1\IntecapBooks.Business.pdb
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Business\obj\Debug\netcoreapp3.1\IntecapBooks.Business.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Business\obj\Debug\netcoreapp3.1\IntecapBooks.Business.AssemblyInfoInputs.cache
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Business\obj\Debug\netcoreapp3.1\IntecapBooks.Business.AssemblyInfo.cs
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Business\obj\Debug\netcoreapp3.1\IntecapBooks.Business.csproj.CoreCompileInputs.cache
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Business\obj\Debug\netcoreapp3.1\IntecapBooks.Business.dll
+C:\Users\angel.soto\source\repos\IntecapBooks\IntecapBooks\IntecapBooks.Business\obj\Debug\netcoreapp3.1\IntecapBooks.Business.pdb

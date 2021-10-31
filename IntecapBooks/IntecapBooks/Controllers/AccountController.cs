@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace IntecapBooks.Controllers
@@ -19,10 +20,10 @@ namespace IntecapBooks.Controllers
             _signInManager = signInManager;
         }
         [HttpGet]
-        public IActionResult Login()
+        public async Task<IActionResult> Login()
         {
             var loginModel = new LoginViewModel();
-            
+            loginModel.ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             return View(loginModel);
         }
 
@@ -42,14 +43,50 @@ namespace IntecapBooks.Controllers
             return View();
         }
 
-        public IActionResult Register()
+        public async Task<IActionResult> Register()
         {
             var registerModel = new RegisterViewModel();
+            registerModel.ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
             return View(registerModel);
         }
         public IActionResult AccessDenied()
         {
             return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ExternalLogin(string provider)
+        {
+            var redirectUrl = Url.Action("ExternalLoginCallback", "Account");
+            var properties = _signInManager.ConfigureExternalAuthenticationProperties(provider, redirectUrl);
+            return new ChallengeResult(provider, properties);
+        }
+
+        public async Task<IActionResult> ExternalLoginCallback(string returnUrl = null, string remoteError = null)
+        {
+            var info = await _signInManager.GetExternalLoginInfoAsync();
+            
+            var result = await _signInManager.ExternalLoginSignInAsync(info.LoginProvider, info.ProviderKey, isPersistent: false);
+            if (!result.Succeeded)
+            {
+                var email = info.Principal.FindFirstValue(ClaimTypes.Email);
+                var name = info.Principal.FindFirstValue(ClaimTypes.Name);
+                var user = new ApplicationUser
+                {
+                    Email = email,
+                    Name = name,
+                    UserName = email,
+                    NormalizedUserName = email
+
+                };
+
+                await _userManager.CreateAsync(user);
+                await _userManager.AddLoginAsync(user, info);
+                await _signInManager.SignInAsync(user, isPersistent: false);
+            }
+
+            return RedirectToAction("Index", "Home");
+
         }
 
         [HttpPost]

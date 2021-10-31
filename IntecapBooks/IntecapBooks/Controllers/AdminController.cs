@@ -60,7 +60,6 @@ namespace IntecapBooks.Controllers
             else
             {
                 newBookModel.Book = new BookModel();
-
             }
             
             return Ok(newBookModel);

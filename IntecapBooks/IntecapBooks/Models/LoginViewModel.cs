@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Authentication;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace IntecapBooks.Models
 {
@@ -9,5 +11,8 @@ namespace IntecapBooks.Models
 
         [Required]
         public string Password { get; set; }
+
+        public IList<AuthenticationScheme> ExternalLogins { get; set; }
+
     }
 }

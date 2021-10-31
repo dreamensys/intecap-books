@@ -52,6 +52,32 @@
 
                     </form>
 
+                    <form id="external-account" action="/Account/ExternalLogin" method="post">
+
+                        <div class="row">
+                            <p>
+                            </p>
+                            @if (Model.ExternalLogins.Any(w => w.Name == "Facebook"))
+                            {
+                                <div class="col-6">
+                                    <button type="submit" class="btn btn-block facebook-btn form-control" name="provider" value="Facebook" title="Log in using your Facebook account">
+                                        <i class="fab fa-facebook-square" aria-hidden="true"></i> Facebook
+                                    </button>
+                                </div>
+                            }
+                            @if (Model.ExternalLogins.Any(w => w.Name == "Google"))
+                            {
+                                <div class="col-6">
+                                    <button type="submit" class="btn btn-block google-btn form-control" name="provider" value="Google" title="Log in using your Google account">
+                                        <i class="fab fa-google" aria-hidden="true"></i> Google
+                                    </button>
+                                </div>
+                                <p></p>
+                            }
+
+                        </div>
+                    </form>
+
 
                 </div>
 

@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Authentication;
+using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 
 namespace IntecapBooks.Models
 {
@@ -27,5 +29,7 @@ namespace IntecapBooks.Models
         public System.DateTime Birthday { get; set; }
 
         public string StreetAddress { get; set; }
+
+        public IList<AuthenticationScheme> ExternalLogins { get; set; }
     }
 }
